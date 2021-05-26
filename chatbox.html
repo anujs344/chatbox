@@ -1,0 +1,189 @@
+<html>
+     <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         
+         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            body{
+    margin:0px;
+    padding:0px;
+}
+h1{
+   text-align:center;
+    color:white;
+    padding-bottom:10px;
+    margin: 0px;
+}
+#cross{
+    color:white;
+    cursor:pointer;
+    font-size:1.5rem;
+    display: block;
+    padding:10px;
+}
+
+#chat_btn{
+    position: fixed;
+    bottom:35px;
+    right:10px;
+    height:50px;
+    width:260px;
+    font-size: 1.5rem;
+    border:none;
+    border-radius: 2px;
+    background-color: black;
+    color:white;
+    cursor: pointer;
+}
+#chat_box{
+    border:2px solid black;
+    min-width:40%;
+    position: fixed;
+    bottom:40px;
+    right: 5px;
+    box-sizing: border-box;
+     background-color: black;
+    
+}
+.msg_display{
+    height:300px;
+    padding:20px;
+    overflow-y:auto;
+    overflow-x: hidden;
+    width:95%;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+     border-radius:10px 10px 0px 0px;
+    background: rgb(103,212,213);
+background: linear-gradient(128deg, rgba(103,212,213,1) 0%, rgba(46,186,219,1) 100%);
+}
+.sr{
+    margin:10px 0px;
+    max-width:250px;
+    word-wrap: break-word;
+    padding:10px;
+    height: auto;
+    background-color:white;
+}
+.message_send{
+    float:right;
+    clear:both;
+}
+.message_recieve{
+    float: left;
+    clear:both;
+}
+
+.bottom-box{
+    display: flex;
+}
+.type-div{
+    flex-basis:80%;
+}
+.send-div{
+    flex-basis:20%;
+}
+.text-msg{
+    height:50px;
+    width:100%;
+    padding:5px 10px;
+    border:none;
+    outline: none;
+  }
+.send_btn{
+    height:50px;
+    width:100%;
+    border:none;
+    background-color:black;
+    font-size:2rem;
+    color:white;
+    cursor: pointer;
+   
+}
+
+/*css for responsive*/
+@media (min-width:576px) and (max-width:1400px) {
+    .sr{
+        font-size:1.2rem;
+          max-width:60%;
+        padding:10px;
+        margin:2px;
+    }
+   
+}
+@media (max-width: 575.98px) 
+{
+    #chat_btn{
+        width:170px;
+        height:40px;
+    }
+    h1{
+        font-size: 1rem;
+    }
+    .msg_display{
+        width:95%;
+        font-size: 0.5rem;
+        padding:10px;
+    }
+    .sr{
+         max-width:60%;
+         padding:5px;
+        margin:5px 0px;
+    }
+
+}
+@media (max-width:450px) {
+    #chat_box{
+      max-width:70%;
+}     
+}
+         </style> 
+    </head> 
+    <body> 
+        <div>
+         
+        </div>
+            <button id="chat_btn" onclick="openchat()">chat</button>
+            
+         <div id=chat_box style="display:none;">
+             <i class="fas fa-times" id="cross"></i>
+              <h1>Let's Chat</h1>
+              <div class="msg_display" >
+                 <div class="message_send sr">
+                    hello
+                  </div>
+                  <div class="message_recieve sr">
+                    hie
+                  </div>
+                  <div class="message_send sr">
+                        <div>bye.</div>
+                  </div>
+                  
+                  
+             </div>
+             <div class="bottom-box">
+                 <div class="type-div">
+               <input type="text" placeholder="Type a message..." class="text-msg">
+                 </div>
+                 <div class="send-div">
+               <button class="send_btn" ><i class="fas fa-arrow-alt-circle-right"></i></button>
+                </div>
+             </div>
+        </div>
+   
+        <script>
+            function openchat(){
+                document.getElementById("chat_box").style.display="block";
+                document.getElementById("chat_btn").style.display="none";
+            }
+        </script>
+        <script>
+            var a=document.getElementById("cross");
+            a.addEventListener("click",exitfunction);
+            function exitfunction(){
+                document.getElementById("chat_box").style.display="none";
+                 document.getElementById("chat_btn").style.display="block";
+            }
+        </script>
+    </body>
+</html>
